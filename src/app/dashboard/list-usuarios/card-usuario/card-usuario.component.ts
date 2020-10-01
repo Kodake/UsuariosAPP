@@ -8,14 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardUsuarioComponent implements OnInit {
   @Input() user: any;
   imgUrl: string;
-  firstName: string;
-  email: string;
+  author: string;
+  download_url: string;
   id: number;
   constructor() { }
 
   ngOnInit(): void {
-    this.firstName = this.user.name;
-    this.email = this.user.email;
+    this.author = this.user.author;
+    this.download_url = this.user.download_url;
    /*  this.imgUrl = this.user._links.avatar.href; */
     this.id = this.user.id;
   }

@@ -1,10 +1,10 @@
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    color: #cdd0d4
+    color: black;
 }
 hr {
-    border-color: #F05F44;
+    border-color: #ff2600c5;
     border-width: 3px;
     max-width: 65px;
 }

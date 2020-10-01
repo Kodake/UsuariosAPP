@@ -9,16 +9,15 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class UsuarioComponent implements OnInit {
   id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
+  author: string;
+  download_url: string;
+  url: string;
   urlImg: string;
-  phone: string;
-  gender: string;
+  email: string;
   loading = true;
 
   constructor(private aRoute: ActivatedRoute,
-              private usuarioService: UsuarioService) {
+    private usuarioService: UsuarioService) {
     this.id = +this.aRoute.snapshot.paramMap.get('id');
   }
 
@@ -29,12 +28,11 @@ export class UsuarioComponent implements OnInit {
   getUsuario(): void {
     this.usuarioService.getUsuario(this.id).subscribe(data => {
       console.log(data);
-      this.firstName = data.data.name;
-     /*  this.lastName = data.result.last_name; */
-      this.email = data.data.email;
-      this.phone = data.data.phone;
-      this.gender = data.data.gender;
-     /*  this.urlImg = data.result._links.avatar.href; */
+      this.author = data.author;
+      this.download_url = data.download_url;
+      this.url = data.url;
+      this.urlImg = 'https://picsum.photos/id/' + this.id + '/150/150';
+      this.email = this.id + '@example.com';
       this.loading = false;
     });
   }
